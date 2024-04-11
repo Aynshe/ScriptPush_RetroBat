@@ -32,25 +32,59 @@ class Program
         // 1 - Définir le dossier de travail
         string workingDirectory = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\..\\.DemulShooter"));
 
-        // Exécuter HIDgetpush.exe
-        Process.Start(new ProcessStartInfo
+        // Lire le fichier .config
+        string configFilePathpush = Path.Combine(workingDirectory, ".es_systems\\.config");
+        if (!File.Exists(configFilePathpush))
         {
-            FileName = $"{workingDirectory}\\HIDgetpush.exe",
-            WorkingDirectory = workingDirectory,
-            UseShellExecute = true,
-            WindowStyle = ProcessWindowStyle.Hidden
-        });
-        Thread.Sleep(1000); // Attendre 1 secondes
+            return;
+        }
 
-        // Exécuter getput.exe
-        Process.Start(new ProcessStartInfo
+        var configLines = File.ReadAllLines(configFilePathpush);
+        string DSUpdtlock = "";
+        string currentSectionpush = "";
+
+        // Parcourir chaque ligne du fichier .config
+        foreach (var line in configLines)
         {
-            FileName = $"{workingDirectory}\\getput.exe",
-            WorkingDirectory = workingDirectory,
-            UseShellExecute = true,
-            WindowStyle = ProcessWindowStyle.Hidden
-        });
-        Thread.Sleep(2000); // Attendre 2 secondes
+            // Vérifier si la ligne est une section
+            if (line.StartsWith("[") && line.EndsWith("]"))
+            {
+                // Extraire le nom de la section
+                currentSectionpush = line.Trim('[', ']');
+                continue;
+            }
+
+            // Si la ligne n'est pas une section et que la section actuelle est [config], extraire la valeur de DSUpdtlock
+            if (currentSectionpush == "config" && line.StartsWith("DSUpdtlock="))
+            {
+                DSUpdtlock = line.Split('=')[1].Trim().ToLower();
+                break;
+            }
+        }
+
+        // Exécuter HIDgetpush.exe et getput.exe seulement si DSUpdtlock=true
+        if (DSUpdtlock == "true")
+        {
+            // Exécuter HIDgetpush.exe
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = $"{workingDirectory}\\HIDgetpush.exe",
+                WorkingDirectory = workingDirectory,
+                UseShellExecute = true,
+                WindowStyle = ProcessWindowStyle.Hidden
+            });
+            Thread.Sleep(1000); // Attendre 1 secondes
+
+            // Exécuter getput.exe
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = $"{workingDirectory}\\getput.exe",
+                WorkingDirectory = workingDirectory,
+                UseShellExecute = true,
+                WindowStyle = ProcessWindowStyle.Hidden
+            });
+            Thread.Sleep(2000); // Attendre 2 secondes
+        }
 
         // Vérifier si le fichier .locked est présent
         string lockedFilePath = Path.Combine(workingDirectory, ".locked");
@@ -70,7 +104,9 @@ class Program
         {
             FileName = "cmd.exe",
             Arguments = $"/C start \"Check\" /B \"{workingDirectory}\\.es_systems\\Check.bat\"",
-            UseShellExecute = true
+            UseShellExecute = false, // Modifier à false
+            WindowStyle = ProcessWindowStyle.Hidden,
+            CreateNoWindow = true // Ajouter cette ligne
         });
 
         // Définir le chemin du fichier de log
@@ -114,14 +150,21 @@ class Program
         var lines = File.ReadAllLines(configFilePath);
         bool debugMode = false;
         List<string> requiredDirectories = new List<string>();
+        string currentSectionConfig = "";
 
         foreach (var line in lines)
         {
-            if (line.StartsWith("debug="))
+            if (line.StartsWith("[") && line.EndsWith("]"))
+            {
+                currentSectionConfig = line.Trim('[', ']');
+                continue;
+            }
+
+            if (currentSectionConfig == "config" && line.StartsWith("debug="))
             {
                 debugMode = line.Split('=')[1].Trim().ToLower() == "true";
             }
-            else
+            else if (currentSectionConfig == "systems")
             {
                 requiredDirectories.Add(line);
             }
@@ -134,6 +177,7 @@ class Program
                 return;
             }
         }
+
 
         // Afficher le nom du jeu exécuté si le mode de débogage est activé
         if (debugMode)
