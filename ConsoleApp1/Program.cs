@@ -262,35 +262,72 @@ class Program
                     string systemExeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{systemName}.exe");
 
                     // Vérifier si un fichier .ahk ou .exe du même nom que la rom/jeu existe et l'exécuter
+                    // Exécuter les processus AutoHotkey, JoyToKey et nomousy en cachant la fenêtre
                     if (File.Exists(scriptFile))
                     {
-                        Process.Start(scriptFile);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = scriptFile,
+                            UseShellExecute = true,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [AutoHotKey_ahk] Exécution du fichier AHK : {scriptFile}\n");
                     }
                     // ...
                     else if (File.Exists(exeFile))
                     {
-                        Process.Start(exeFile);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = exeFile,
+                            UseShellExecute = true,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [AutoHotKey_exe] Exécution du fichier EXE : {exeFile}\n");
                     }
                     else if (File.Exists(globalScriptFile))
                     {
-                        Process.Start(globalScriptFile);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = globalScriptFile,
+                            UseShellExecute = true,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [AutoHotKey_global_ahk] Exécution du fichier AHK global : {globalScriptFile}\n");
                     }
                     else if (File.Exists(globalExeFile))
                     {
-                        Process.Start(globalExeFile);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = globalExeFile,
+                            UseShellExecute = true,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [AutoHotKey_global_exe] Exécution du fichier EXE global : {globalExeFile}\n");
                     }
                     else if (File.Exists(systemScriptFile))
                     {
-                        Process.Start(systemScriptFile);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = systemScriptFile,
+                            UseShellExecute = true,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [AutoHotKey_system_ahk] Exécution du fichier AHK spécifique au système : {systemScriptFile}\n");
                     }
                     else if (File.Exists(systemExeFile))
                     {
-                        Process.Start(systemExeFile);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = systemExeFile,
+                            UseShellExecute = true,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [AutoHotKey_system_exe] Exécution du fichier EXE spécifique au système : {systemExeFile}\n");
                     }
 
@@ -300,7 +337,6 @@ class Program
                         Process.Start(new ProcessStartInfo
                         {
                             FileName = $"{workingDirectory}\\.es_systems\\.JoyToKey\\JoyToKey.exe",
-                            UseShellExecute = true
                         });
                         File.AppendAllText(logFilePath, $"{DateTime.Now}: [JoyToKey] Exécution de JoyToKey {joytokey_flag}\n");
                     }
@@ -317,7 +353,9 @@ class Program
                             Process.Start(new ProcessStartInfo
                             {
                                 FileName = globalNomousyAhkFile,
-                                UseShellExecute = true
+                                UseShellExecute = true,
+                                WindowStyle = ProcessWindowStyle.Hidden,
+                                CreateNoWindow = true
                             });
                             File.AppendAllText(logFilePath, $"{DateTime.Now}: [Global_nomousy_ahk] Exécution du fichier AHK global nomousy : {globalNomousyAhkFile}\n");
                         }
@@ -326,7 +364,9 @@ class Program
                             Process.Start(new ProcessStartInfo
                             {
                                 FileName = globalNomousyExeFile,
-                                UseShellExecute = true
+                                UseShellExecute = true,
+                                WindowStyle = ProcessWindowStyle.Hidden,
+                                CreateNoWindow = true
                             });
                             File.AppendAllText(logFilePath, $"{DateTime.Now}: [Global_nomousy_exe] Exécution du fichier EXE global nomousy : {globalNomousyExeFile}\n");
                         }
@@ -335,7 +375,9 @@ class Program
                             Process.Start(new ProcessStartInfo
                             {
                                 FileName = runNomousyExeFile,
-                                UseShellExecute = true
+                                UseShellExecute = true,
+                                WindowStyle = ProcessWindowStyle.Hidden,
+                                CreateNoWindow = true
                             });
                             File.AppendAllText(logFilePath, $"{DateTime.Now}: [Nomousy_true] Exécution de nomousy {nomousy_flag}\n");
                         }
