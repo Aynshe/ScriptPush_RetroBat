@@ -255,7 +255,7 @@ class Program
                     string systemName = currentSection; // Le nom du système est la section actuelle dans le fichier roms.ini
 
                     string scriptFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{gameName}.ahk");
-                    string exeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{gameName}.exe");
+                    string exeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{gameName}_ahk.exe");
                     string globalScriptFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", "global.ahk");
                     string globalExeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", "global.exe");
                     string systemScriptFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{systemName}.ahk");
