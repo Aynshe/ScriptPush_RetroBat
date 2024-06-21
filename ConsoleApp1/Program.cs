@@ -259,7 +259,7 @@ class Program
                     string globalScriptFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", "global.ahk");
                     string globalExeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", "global.exe");
                     string systemScriptFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{systemName}.ahk");
-                    string systemExeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{systemName}.exe");
+                    string systemExeFile = Path.Combine(demulShooterPath, ".es_systems", systemName, "ahk", $"{systemName}_ahk.exe");
 
                     // Vérifier si un fichier .ahk ou .exe du même nom que la rom/jeu existe et l'exécuter
                     // Exécuter les processus AutoHotkey, JoyToKey et nomousy en cachant la fenêtre
