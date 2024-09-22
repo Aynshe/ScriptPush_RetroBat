@@ -1,0 +1,4 @@
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player1 Device configuration' field_target:'P1DeviceName'
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player2 Device configuration' field_target:'P2DeviceName'
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player3 Device configuration' field_target:'P3DeviceName'
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player4 Device configuration' field_target:'P4DeviceName'

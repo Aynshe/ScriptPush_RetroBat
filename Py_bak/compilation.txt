@@ -1,0 +1,1 @@
+4879 INFO: BuildingC:\Users\Win11\AppData\Local\Programs\Python\Python311\python.exe -m PyInstaller --onefile -w F:\@Users\Download\Script_DS_Mamhook_\py\kill.py --distpath F:\@Users\Download\Script_DS_Mamhook_\py\s\Win11>

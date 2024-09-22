@@ -1,0 +1,8 @@
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player1 Device configuration' field_target:'P1DeviceName'
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player2 Device configuration' field_target:'P2DeviceName'
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player3 Device configuration' field_target:'P3DeviceName'
+file_source:'HIDsget.ini' section_source:'clear' field_source:'clear' file_target:'config.ini' section_target:'Player4 Device configuration' field_target:'P4DeviceName'
+file_source:'HIDsget.ini' section_source:'GUN4IR_P1' field_source:'gun4ir_p1' file_target:'config.ini' section_target:'Player1 Device configuration' field_target:'P1DeviceName'
+file_source:'HIDsget.ini' section_source:'GUN4IR_P2' field_source:'gun4ir_p2' file_target:'config.ini' section_target:'Player2 Device configuration' field_target:'P2DeviceName'
+file_source:'HIDsget.ini' section_source:'GUN4IR_P3' field_source:'gun4ir_p3' file_target:'config.ini' section_target:'Player3 Device configuration' field_target:'P3DeviceName'
+file_source:'HIDsget.ini' section_source:'GUN4IR_P4' field_source:'gun4ir_p4' file_target:'config.ini' section_target:'Player4 Device configuration' field_target:'P4DeviceName'
