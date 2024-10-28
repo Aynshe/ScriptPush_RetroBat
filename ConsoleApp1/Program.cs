@@ -30,7 +30,7 @@ class Program
         }
 
         // 1 - Définir le dossier de travail
-        string workingDirectory = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\..\\.DemulShooter"));
+        string workingDirectory = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\..\\plugins\\DemulShooter"));
 
         // Lire le fichier .config
         string configFilePathpush = Path.Combine(workingDirectory, ".es_systems\\.config");
