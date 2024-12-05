@@ -125,17 +125,17 @@ class Program
         string fileName = Path.GetFileNameWithoutExtension(gameExecuted);
 
         // Vérifier s'il y a une double extension dans le nom de fichier
-        if (fileName.Contains("."))
+        if (fileName.Contains('.'))
         {
             // Si oui, prendre la première partie comme nom de fichier
-            fileName = fileName.Substring(0, fileName.LastIndexOf("."));
+            fileName = fileName.Split('.')[0];
         }
 
         // Filtrer pour retirer toute extension restante
-        int extensionIndex = fileName.LastIndexOf(".");
+        int extensionIndex = fileName.LastIndexOf('.');
         if (extensionIndex != -1)
         {
-            fileName = fileName.Substring(0, extensionIndex);
+            fileName = fileName.Split('.')[0];
         }
 
 
@@ -149,7 +149,7 @@ class Program
 
         var lines = File.ReadAllLines(configFilePath);
         bool debugMode = false;
-        List<string> requiredDirectories = new List<string>();
+        List<string> requiredDirectories = new();
         string currentSectionConfig = "";
 
         foreach (var line in lines)
@@ -196,7 +196,7 @@ class Program
 
         // Variables pour gérer les sections et le nom du jeu
         string currentSection = "";
-        string gameName = "";
+        string gameName;
         string rom_demulshooter = "";
         string version_demulshooter = "";
         string target_value = "";
