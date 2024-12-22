@@ -74,16 +74,16 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - AutoHotkey community
 
 sources :
-https://github.com/Aynshe/ScriptPush_RetroBat  /  https://github.com/Aynshe/Edit_LsTRoms
+#https://github.com/Aynshe/ScriptPush_RetroBat  /  #https://github.com/Aynshe/Edit_LsTRoms
 
-https://retrobatofficial.itch.io/retrobat / https://social.retrobat.org/discord
+#https://retrobatofficial.itch.io/retrobat / https://social.retrobat.org/discord
 #https://github.com/argonlefou/DemulShooter/wiki/Outputs
 #https://github.com/argonlefou/DemulShooter/wiki/Usage#supported-options-
 #https://github.com/argonlefou/DemulShooter/wiki/Usage#supported-target-
-https://dragonking.arcadecontrols.com/static.php?page=aboutmamehooker
-https://pistolasdeluzpedia.miraheze.org/wiki/Configuraci%C3%B3n_Mamehooker_y_GUN4IR
-https://github.com/AutoHotkey/AutoHotkey
-https://github.com/AutoHotkey/Ahk2Exe
-https://github.com/nixxou
+#https://dragonking.arcadecontrols.com/static.php?page=aboutmamehooker
+#https://pistolasdeluzpedia.miraheze.org/wiki/Configuraci%C3%B3n_Mamehooker_y_GUN4IR
+#https://github.com/AutoHotkey/AutoHotkey
+#https://github.com/AutoHotkey/Ahk2Exe
+#https://github.com/nixxou
 
-https://www.gun4ir.com  /  https://discord.gg/HJyfYja
+#https://www.gun4ir.com  /  #https://discord.gg/HJyfYja
