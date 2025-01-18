@@ -36,12 +36,6 @@ A lightweight Windows application designed to manage and execute DemulShooter fo
 - .NET 8.0 or higher
 - AutoHotkey v2 (for script execution)
 
-## Installation
-
-1. Download the latest release from the [releases page](https://github.com/Aynshe/ScriptPush_RetroBat/releases)
-2. Extract the archive to your desired location
-3. Run `ScriptPush.exe`
-
 ## Usage
 
 1. **Basic Setup**
